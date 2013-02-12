@@ -11,6 +11,7 @@
 #import "ImageListCell.h"
 #import "DetailTableViewController.h"
 #import "MWI18N/MWI18N.h"
+#import "LoginViewController.h"
 
 @interface MyUploadsViewController ()
 
@@ -49,7 +50,9 @@
     self.fetchedResultsController.delegate = self;
     
     if (app.username == nil || [app.username isEqualToString:@""]) {
-        [self performSegueWithIdentifier:@"SettingsSegue" sender:self];
+        UIStoryboard *storyboard = [self storyboard];
+        LoginViewController *loginViewCtrlr = [storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
+        [self presentModalViewController:loginViewCtrlr animated:NO];
     }
 }
 

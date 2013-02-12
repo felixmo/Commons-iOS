@@ -115,6 +115,8 @@
 		DC0F63DF16BBB73F0017E63C /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC0F63DE16BBB73F0017E63C /* defaults.plist */; };
 		DC2CB56716B9BD420047977E /* MWNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2CB56616B9BD420047977E /* MWNetworkActivityIndicatorManager.m */; };
 		DC606FBF16BF28FA006EFA5C /* ImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC606FBE16BF28FA006EFA5C /* ImageScrollViewController.m */; };
+		DC976EEE16C55C4400944DAB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC976EED16C55C4400944DAB /* LoginViewController.m */; };
+		DC976EF416C5724900944DAB /* Commons-logo-en.png in Resources */ = {isa = PBXBuildFile; fileRef = DC976EF316C5724900944DAB /* Commons-logo-en.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -216,6 +218,9 @@
 		DC2CB56616B9BD420047977E /* MWNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWNetworkActivityIndicatorManager.m; path = mwapi/MWNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		DC606FBD16BF28FA006EFA5C /* ImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollViewController.h; sourceTree = "<group>"; };
 		DC606FBE16BF28FA006EFA5C /* ImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollViewController.m; sourceTree = "<group>"; };
+		DC976EEC16C55C4400944DAB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DC976EED16C55C4400944DAB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DC976EF316C5724900944DAB /* Commons-logo-en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Commons-logo-en.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +408,7 @@
 		D4086177169B760800D6ACB0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC976EF316C5724900944DAB /* Commons-logo-en.png */,
 				D41D280916C18C9F00BC3ABE /* cc-by.png */,
 				D41D280A16C18C9F00BC3ABE /* cc-by@2x.png */,
 				D41D280B16C18C9F00BC3ABE /* cc-sa.png */,
@@ -475,6 +481,8 @@
 				D41D281216C19C4D00BC3ABE /* ImageListCell.m */,
 				D41D281516C19CE100BC3ABE /* MyUploadsViewController.h */,
 				D41D281616C19CE100BC3ABE /* MyUploadsViewController.m */,
+				DC976EEC16C55C4400944DAB /* LoginViewController.h */,
+				DC976EED16C55C4400944DAB /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -644,6 +652,7 @@
 				D4E0384A16C463C700330A7F /* messages-en.json in Resources */,
 				D4E0385816C47B5200330A7F /* messages-fr.json in Resources */,
 				D4E0385C16C47B6C00330A7F /* messages-qqq.json in Resources */,
+				DC976EF416C5724900944DAB /* Commons-logo-en.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +757,7 @@
 				D4E0383C16C4567500330A7F /* MWMessage.m in Sources */,
 				D4E0384116C462C800330A7F /* MWMessageStore.m in Sources */,
 				D4E0385416C46FDD00330A7F /* MWI18N.m in Sources */,
+				DC976EEE16C55C4400944DAB /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
