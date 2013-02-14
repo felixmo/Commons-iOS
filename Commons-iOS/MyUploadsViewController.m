@@ -12,6 +12,7 @@
 #import "DetailTableViewController.h"
 #import "MWI18N/MWI18N.h"
 #import "LoginViewController.h"
+#import "Reachability.h"
 
 @interface MyUploadsViewController ()
 
@@ -31,6 +32,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChange:) name:kReachabilityChangedNotification object:nil];
 
     // Set up refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -60,6 +63,19 @@
         UIStoryboard *storyboard = [self storyboard];
         LoginViewController *loginViewCtrlr = [storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
         [self presentModalViewController:loginViewCtrlr animated:NO];
+    }
+}
+
+-(void)reachabilityChange:(NSNotification*)note {
+    Reachability * reach = [note object];
+    NetworkStatus netStatus = [reach currentReachabilityStatus];
+    if (netStatus == ReachableViaWiFi || netStatus == ReachableViaWWAN)
+    {
+        self.uploadButton.enabled = YES;
+    }
+    else if (netStatus == NotReachable)
+    {
+        self.uploadButton.enabled = NO;
     }
 }
 
@@ -123,7 +139,7 @@
      }
      */
     NSLog(@"picked: %@", info);
-    [CommonsApp.singleton prepareImage:info onCompletion:nil];
+    [CommonsApp.singleton prepareImage:info];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     self.uploadButton.enabled = YES;
@@ -178,27 +194,26 @@
             __block void (^run)() = ^() {
                 FileUpload *record = [app firstUploadRecord];
                 if (record != nil) {
-                    [app beginUpload:record
-                          completion:^() {
-                              NSLog(@"completed an upload, going on to next");
-                              run();
-                          }
-                           onFailure:^(NSError *error) {
-                               
-                               NSLog(@"Upload failed: %@", [error localizedDescription]);
-                               
-                               [self.navigationItem setRightBarButtonItem:self.uploadButton animated:YES];
-                               
-                               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[MWMessage forKey:@"error-upload-failed"].text
-                                                                                   message:[error localizedDescription]
-                                                                                  delegate:nil
-                                                                         cancelButtonTitle:[MWMessage forKey:@"error-dismiss"].text
-                                                                         otherButtonTitles:nil];
-                               [alertView show];
-                               
-                               run = nil;
-                           }
-                     ];
+                    MWPromise *upload = [app beginUpload:record];
+                    [upload done:^(id arg) {
+                        NSLog(@"completed an upload, going on to next");
+                        run();
+                    }];
+                    [upload fail:^(NSError *error) {
+                        
+                         NSLog(@"Upload failed: %@", [error localizedDescription]);
+                        
+                         self.navigationItem.rightBarButtonItem = [self uploadButton];
+                        
+                         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[MWMessage forKey:@"error-upload-failed"].text
+                                                                             message:[error localizedDescription]
+                                                                            delegate:nil
+                                                                   cancelButtonTitle:[MWMessage forKey:@"error-dismiss"].text
+                                                                   otherButtonTitles:nil];
+                         [alertView show];
+                        
+                         run = nil;
+                    }];
                 } else {
                     NSLog(@"no more uploads");
                     [self.navigationItem setRightBarButtonItem:self.uploadButton animated:YES];
@@ -257,7 +272,8 @@
 }
 
 - (IBAction)refreshButtonPushed:(id)sender {
-    [CommonsApp.singleton refreshHistoryOnCompletion:^() {
+    MWPromise *refresh = [CommonsApp.singleton refreshHistory];
+    [refresh done:^(id arg) {
         [self.refreshControl endRefreshing];
     }];
 }
@@ -425,16 +441,15 @@
     } else {
         cell.thumbnailURL = thumbURL;
         cell.image.image = nil;
-        void (^completion)(UIImage *) = ^(UIImage *image) {
+        MWPromise *fetch = [record fetchThumbnail];
+        [fetch done:^(UIImage *image) {
             if ([cell.title isEqualToString:title]) {
                 cell.image.image = image;
             }
-        };
-        void (^failure)(NSError *) = ^(NSError *error) {
+        }];
+        [fetch fail:^(NSError *error) {
             NSLog(@"failed to load thumbnail");
-        };
-        [record fetchThumbnailOnCompletion:completion
-                                 onFailure:failure];
+        }];
     }
     if (record.complete.boolValue) {
         // Old upload, already complete.

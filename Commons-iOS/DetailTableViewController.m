@@ -12,6 +12,7 @@
 #import "ImageScrollViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MWI18N/MWMessage.h"
+#import "MyUploadsViewController.h"
 
 @interface DetailTableViewController ()
 
@@ -42,22 +43,24 @@
     self.titleTextField.placeholder = [MWMessage forKey:@"details-title-placeholder"].text;
     self.descriptionLabel.text = [MWMessage forKey:@"details-description-label"].text;
     self.licenseLabel.text = [MWMessage forKey:@"details-license-label"].text;
-
+    
     // Load up the selected record
     FileUpload *record = self.selectedRecord;
-
+    
     if (record != nil) {
         self.titleTextField.text = record.title;
         self.descriptionTextView.text = record.desc;
         self.imageSpinner.hidden = NO;
-        [record fetchThumbnailOnCompletion:^(UIImage *image) {
-                    self.imageSpinner.hidden = YES;
-                    self.imagePreview.image = image;
-                }
-                                 onFailure:^(NSError *error) {
-                                     NSLog(@"Failed to fetch wiki image: %@", [error localizedDescription]);
-                                    self.imageSpinner.hidden = YES;
-                                 }];
+
+        MWPromise *thumb = [record fetchThumbnail];
+        [thumb done:^(UIImage *image) {
+            self.imageSpinner.hidden = YES;
+            self.imagePreview.image = image;
+        }];
+        [thumb fail:^(NSError *error) {
+            NSLog(@"Failed to fetch wiki image: %@", [error localizedDescription]);
+            self.imageSpinner.hidden = YES;
+        }];
 
         if (record.complete.boolValue) {
             // Completed upload...
@@ -77,7 +80,7 @@
     } else {
         NSLog(@"This isn't right, have no selected record in detail view");
     }
-
+    
     // Set delegates so we know when fields change...
     self.titleTextField.delegate = self;
     self.descriptionTextView.delegate = self;
@@ -136,26 +139,22 @@
                 
                 view.title = record.title;
                 
-                void (^completion)(UIImage *image) = ^(UIImage *image) {
+                MWPromise *fetch;
+                if (record.complete.boolValue) {
+                    // Fetch cached or internet image at standard size...
+                    fetch = [CommonsApp.singleton fetchWikiImage:record.title size:size];
+                } else {
+                    // Load the local file...
+                    fetch = [record fetchThumbnail];
+                }
+                [fetch done:^(UIImage *image) {
                     [view setImage:image];
-                };
-                void (^failure)(NSError *error) = ^(NSError *error) {
+                }];
+                [fetch fail:^(NSError *error) {
                     NSLog(@"Failed to download image: %@", [error localizedDescription]);
                     // Pop back after a second if image failed to download
                     [self performSelector:@selector(popViewControllerAnimated) withObject:nil afterDelay:1];
-                };
-                if (record.complete.boolValue) {
-                    // Fetch cached or internet image at standard size...
-                    [CommonsApp.singleton fetchWikiImage:record.title
-                                                    size:size
-                                            onCompletion:completion
-                                               onFailure:failure];
-                } else {
-                    // Load the local file...
-                    [record fetchThumbnailOnCompletion:completion
-                                             onFailure:failure];
-                }
-                
+                }];
             }
             
         }
@@ -205,8 +204,9 @@
 }
 
 - (IBAction)uploadButtonPushed:(id)sender {
-    if ([[self.navigationController.viewControllers objectAtIndex:0] respondsToSelector:@selector(uploadButtonPushed:)]) {
-        [[self.navigationController.viewControllers objectAtIndex:0] performSelector:@selector(uploadButtonPushed:)];
+    MyUploadsViewController *controller = [self.navigationController.viewControllers objectAtIndex:0];
+    if ([controller respondsToSelector:@selector(uploadButtonPushed:)]) {
+        [controller performSelector:@selector(uploadButtonPushed:) withObject:controller.uploadButton];
     }
     [self popViewControllerAnimated];
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		1F7C6BFA16BEEEF300B7C558 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7C6BF916BEEEF300B7C558 /* SystemConfiguration.framework */; };
+		1F7C6BFB16BEF0D200B7C558 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7C6BF716BEEE4D00B7C558 /* Reachability.m */; };
 		65137CD716BE4C3B006FA9BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4086170169B760800D6ACB0 /* UIKit.framework */; };
 		65137CD816BE4C3B006FA9BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4086172169B760800D6ACB0 /* Foundation.framework */; };
 		65137CDE16BE4C3B006FA9BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65137CDC16BE4C3B006FA9BD /* InfoPlist.strings */; };
@@ -18,6 +21,8 @@
 		65137D0F16BE6696006FA9BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65137D0D16BE6696006FA9BD /* InfoPlist.strings */; };
 		65137D1216BE6696006FA9BD /* Commons_iOS_Application_Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 65137D1116BE6696006FA9BD /* Commons_iOS_Application_Testing.m */; };
 		65137D2016BE69B8006FA9BD /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65137D1816BE69B8006FA9BD /* libOCMock.a */; };
+		655BF5EF16C1052D00B22299 /* StorageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 655BF5EE16C1052D00B22299 /* StorageTools.m */; };
+		655BF5F016C1052D00B22299 /* StorageTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 655BF5EE16C1052D00B22299 /* StorageTools.m */; };
 		65CA697516BFCE3300839D09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CA697416BFCE3300839D09 /* QuartzCore.framework */; };
 		65CA697F16C05B9700839D09 /* Http.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D0E1E9169BA5E2003047A8 /* Http.m */; };
 		65CA698016C05B9700839D09 /* MWApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D0E1EA169BA5E2003047A8 /* MWApi.m */; };
@@ -78,6 +83,13 @@
 		D41D281416C19C4D00BC3ABE /* ImageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D281216C19C4D00BC3ABE /* ImageListCell.m */; };
 		D41D281716C19CE100BC3ABE /* MyUploadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D281616C19CE100BC3ABE /* MyUploadsViewController.m */; };
 		D41D281816C19CE100BC3ABE /* MyUploadsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D41D281616C19CE100BC3ABE /* MyUploadsViewController.m */; };
+		D4284F1016C9C2AA008640B0 /* MWEventLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = D4284F0F16C9C2AA008640B0 /* MWEventLogging.m */; };
+		D44DDD3C16CC4D6000318FBF /* MWDeferred.m in Sources */ = {isa = PBXBuildFile; fileRef = D44DDD3916CC4D6000318FBF /* MWDeferred.m */; };
+		D44DDD3D16CC4D6000318FBF /* MWDeferred.m in Sources */ = {isa = PBXBuildFile; fileRef = D44DDD3916CC4D6000318FBF /* MWDeferred.m */; };
+		D44DDD3E16CC4D6000318FBF /* MWDeferred.m in Sources */ = {isa = PBXBuildFile; fileRef = D44DDD3916CC4D6000318FBF /* MWDeferred.m */; };
+		D44DDD3F16CC4D6000318FBF /* MWPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D44DDD3B16CC4D6000318FBF /* MWPromise.m */; };
+		D44DDD4016CC4D6000318FBF /* MWPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D44DDD3B16CC4D6000318FBF /* MWPromise.m */; };
+		D44DDD4116CC4D6000318FBF /* MWPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D44DDD3B16CC4D6000318FBF /* MWPromise.m */; };
 		D450A0E116B347BE00D1D1E2 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D450A0E016B347BE00D1D1E2 /* SettingsViewController.m */; };
 		D450A0E416B34ADD00D1D1E2 /* CommonsApp.m in Sources */ = {isa = PBXBuildFile; fileRef = D450A0E316B34ADD00D1D1E2 /* CommonsApp.m */; };
 		D450A0F916B366E200D1D1E2 /* FileUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = D450A0F816B366E200D1D1E2 /* FileUpload.m */; };
@@ -120,6 +132,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F7C6BF616BEEE4D00B7C558 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1F7C6BF716BEEE4D00B7C558 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1F7C6BF916BEEEF300B7C558 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		65137CD416BE4C3B006FA9BD /* Commons-iOS-Logic-Testing.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Commons-iOS-Logic-Testing.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65137CDB16BE4C3B006FA9BD /* Commons-iOS-Logic-Testing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Commons-iOS-Logic-Testing-Info.plist"; sourceTree = "<group>"; };
 		65137CDD16BE4C3B006FA9BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -140,6 +155,8 @@
 		65137D1D16BE69B8006FA9BD /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
 		65137D1E16BE69B8006FA9BD /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		65137D1F16BE69B8006FA9BD /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		655BF5ED16C1052D00B22299 /* StorageTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageTools.h; sourceTree = "<group>"; };
+		655BF5EE16C1052D00B22299 /* StorageTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageTools.m; sourceTree = "<group>"; };
 		65CA697416BFCE3300839D09 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D408616C169B760800D6ACB0 /* Commons-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Commons-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4086170169B760800D6ACB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -175,6 +192,12 @@
 		D41D281216C19C4D00BC3ABE /* ImageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageListCell.m; sourceTree = "<group>"; };
 		D41D281516C19CE100BC3ABE /* MyUploadsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUploadsViewController.h; sourceTree = "<group>"; };
 		D41D281616C19CE100BC3ABE /* MyUploadsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUploadsViewController.m; sourceTree = "<group>"; };
+		D4284F0E16C9C2AA008640B0 /* MWEventLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWEventLogging.h; path = MWEventLogging/MWEventLogging.h; sourceTree = "<group>"; };
+		D4284F0F16C9C2AA008640B0 /* MWEventLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWEventLogging.m; path = MWEventLogging/MWEventLogging.m; sourceTree = "<group>"; };
+		D44DDD3816CC4D6000318FBF /* MWDeferred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWDeferred.h; path = mwapi/MWDeferred.h; sourceTree = "<group>"; };
+		D44DDD3916CC4D6000318FBF /* MWDeferred.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWDeferred.m; path = mwapi/MWDeferred.m; sourceTree = "<group>"; };
+		D44DDD3A16CC4D6000318FBF /* MWPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWPromise.h; path = mwapi/MWPromise.h; sourceTree = "<group>"; };
+		D44DDD3B16CC4D6000318FBF /* MWPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWPromise.m; path = mwapi/MWPromise.m; sourceTree = "<group>"; };
 		D450A0D816B3477400D1D1E2 /* Http.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Http.h; path = mwapi/Http.h; sourceTree = "<group>"; };
 		D450A0D916B3477400D1D1E2 /* MWApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MWApi.h; path = mwapi/MWApi.h; sourceTree = "<group>"; };
 		D450A0DA16B3477400D1D1E2 /* MWApiMultipartRequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MWApiMultipartRequestBuilder.h; path = mwapi/MWApiMultipartRequestBuilder.h; sourceTree = "<group>"; };
@@ -260,6 +283,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F7C6BFA16BEEEF300B7C558 /* SystemConfiguration.framework in Frameworks */,
 				65CA697516BFCE3300839D09 /* QuartzCore.framework in Frameworks */,
 				D4896B5116B5C97D009A35FA /* AssetsLibrary.framework in Frameworks */,
 				D41B99F516B1CEB50045BEB5 /* CoreData.framework in Frameworks */,
@@ -276,7 +300,6 @@
 		65137CD916BE4C3B006FA9BD /* Commons-iOS-Logic-Testing */ = {
 			isa = PBXGroup;
 			children = (
-				65137CE616BE4C46006FA9BD /* Libraries */,
 				65137CDF16BE4C3B006FA9BD /* Commons_iOS_Logic_Testing.h */,
 				65137CE016BE4C3B006FA9BD /* Commons_iOS_Logic_Testing.m */,
 				65137CDA16BE4C3B006FA9BD /* Supporting Files */,
@@ -292,13 +315,6 @@
 				65137CE216BE4C3B006FA9BD /* Commons-iOS-Logic-Testing-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		65137CE616BE4C46006FA9BD /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libraries;
 			sourceTree = "<group>";
 		};
 		65137D0A16BE6696006FA9BD /* Commons-iOS-Application-Testing */ = {
@@ -344,6 +360,15 @@
 			path = "Testing-Libraries/OCMock";
 			sourceTree = "<group>";
 		};
+		655BF5EC16C104CD00B22299 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				655BF5ED16C1052D00B22299 /* StorageTools.h */,
+				655BF5EE16C1052D00B22299 /* StorageTools.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		D4086161169B760800D6ACB0 = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +401,7 @@
 		D408616F169B760800D6ACB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F7C6BF916BEEEF300B7C558 /* SystemConfiguration.framework */,
 				65CA697416BFCE3300839D09 /* QuartzCore.framework */,
 				65137CF616BE4C8C006FA9BD /* SenTestingKit.framework */,
 				D4896B5016B5C97D009A35FA /* AssetsLibrary.framework */,
@@ -391,10 +417,14 @@
 		D4086176169B760800D6ACB0 /* Commons-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1F7C6BF616BEEE4D00B7C558 /* Reachability.h */,
+				1F7C6BF716BEEE4D00B7C558 /* Reachability.m */,
 				D4E0383416C44C4B00330A7F /* mwi18n */,
 				D4294E28169CC34E00BCF709 /* mwapi */,
+				D4284F1116C9C32D008640B0 /* MWEventLogging */,
 				D450A0D716B3473A00D1D1E2 /* View Controllers */,
 				D450A0D516B3471A00D1D1E2 /* Data Model */,
+				655BF5EC16C104CD00B22299 /* Utilities */,
 				D4086177169B760800D6ACB0 /* Supporting Files */,
 				D450A0E216B34ADD00D1D1E2 /* CommonsApp.h */,
 				D450A0E316B34ADD00D1D1E2 /* CommonsApp.m */,
@@ -430,9 +460,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D4284F1116C9C32D008640B0 /* MWEventLogging */ = {
+			isa = PBXGroup;
+			children = (
+				D4284F0E16C9C2AA008640B0 /* MWEventLogging.h */,
+				D4284F0F16C9C2AA008640B0 /* MWEventLogging.m */,
+			);
+			name = MWEventLogging;
+			sourceTree = "<group>";
+		};
 		D4294E28169CC34E00BCF709 /* mwapi */ = {
 			isa = PBXGroup;
 			children = (
+				D44DDD3816CC4D6000318FBF /* MWDeferred.h */,
+				D44DDD3916CC4D6000318FBF /* MWDeferred.m */,
+				D44DDD3A16CC4D6000318FBF /* MWPromise.h */,
+				D44DDD3B16CC4D6000318FBF /* MWPromise.m */,
 				D4D0E1E7169BA0F4003047A8 /* mwapi */,
 				D450A0D816B3477400D1D1E2 /* Http.h */,
 				D450A0D916B3477400D1D1E2 /* MWApi.h */,
@@ -714,6 +757,9 @@
 				D4E0383D16C4567500330A7F /* MWMessage.m in Sources */,
 				D4E0384216C462C800330A7F /* MWMessageStore.m in Sources */,
 				D4E0385516C46FDD00330A7F /* MWI18N.m in Sources */,
+				D44DDD3D16CC4D6000318FBF /* MWDeferred.m in Sources */,
+				D44DDD4016CC4D6000318FBF /* MWPromise.m in Sources */,
+				655BF5F016C1052D00B22299 /* StorageTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +773,8 @@
 				D4E0383E16C4567500330A7F /* MWMessage.m in Sources */,
 				D4E0384316C462C800330A7F /* MWMessageStore.m in Sources */,
 				D4E0385616C46FDD00330A7F /* MWI18N.m in Sources */,
+				D44DDD3E16CC4D6000318FBF /* MWDeferred.m in Sources */,
+				D44DDD4116CC4D6000318FBF /* MWPromise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F7C6BFB16BEF0D200B7C558 /* Reachability.m in Sources */,
 				D4D0E1F2169BA5E2003047A8 /* Http.m in Sources */,
 				D4D0E1F3169BA5E2003047A8 /* MWApi.m in Sources */,
 				D4D0E1F4169BA5E2003047A8 /* MWApiMultipartRequestBuilder.m in Sources */,
@@ -757,7 +806,10 @@
 				D4E0383C16C4567500330A7F /* MWMessage.m in Sources */,
 				D4E0384116C462C800330A7F /* MWMessageStore.m in Sources */,
 				D4E0385416C46FDD00330A7F /* MWI18N.m in Sources */,
-				DC976EEE16C55C4400944DAB /* LoginViewController.m in Sources */,
+				D4284F1016C9C2AA008640B0 /* MWEventLogging.m in Sources */,
+				D44DDD3C16CC4D6000318FBF /* MWDeferred.m in Sources */,
+				D44DDD3F16CC4D6000318FBF /* MWPromise.m in Sources */,
+				655BF5EF16C1052D00B22299 /* StorageTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,6 +1007,7 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Commons-iOS/Commons-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -969,6 +1022,7 @@
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Commons-iOS/Commons-iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
